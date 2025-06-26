@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameVault - Steam Style</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: #0b121d;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    /* Scrollbar for carousel */
+    .carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+    .carousel::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .carousel::-webkit-scrollbar-thumb {
+      background: #4f8cff;
+      border-radius: 10px;
+    }
+    /* Game card overlay */
+    .game-card:hover .overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .overlay {
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    /* Full width wrapper */
+    .full-width-wrapper {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      padding: 0 10px; /* Optional padding */
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="full-width-wrapper text-gray-300">
+
+    <header class="flex items-center justify-between p-4 bg-gray-900 shadow-lg sticky top-0 z-50">
+      <div class="text-3xl font-extrabold text-blue-500">ALPHA Tutx Game Vault</div>
+      <nav class="hidden md:flex space-x-6 text-gray-400">
+        <a href="#" class="hover:text-white">Home</a>
+        <a href="#" class="hover:text-white">Fb Page</a>
+        <a href="#" class="hover:text-white">Request a game</a>
+        <a href="#" class="hover:text-white">Game Support/Fix</a>
+      </nav>
+      <button class="md:hidden text-gray-400 hover:text-white focus:outline-none" aria-label="Menu">
+        <!-- Hamburger icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+      <!-- Featured Games Carousel -->
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Featured Games</h2>
+        <div class="carousel flex space-x-6 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-transparent">
+          
+          <!-- Featured Game 1 -->
+          <div class="relative game-card min-w-[300px] rounded-lg overflow-hidden shadow-lg cursor-pointer">
+            <img src="img/the witcher.jpg" alt="Featured Game 1" class="w-full h-44 object-cover">
+            <div class="overlay absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-end p-4 text-white">
+              <h3 class="text-lg font-semibold">The Witcher 3: Wild Hunt</h3>
+              <p class="text-sm mt-1">Explore an epic RPG adventure</p>
+              <a href="https://example.com/download1" target="_blank"
+                 class="mt-3 inline-block bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-md font-semibold text-sm transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Featured Game 2 -->
+          <div class="relative game-card min-w-[300px] rounded-lg overflow-hidden shadow-lg cursor-pointer">
+            <img src="img/warzone 3.jpg" alt="Featured Game 2" class="w-full h-44 object-cover">
+            <div class="overlay absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-end p-4 text-white">
+              <h3 class="text-lg font-semibold">COD Modern Warfare 3</h3>
+              <p class="text-sm mt-1">Fast-paced action shooter</p>
+              <a href="https://drive.google.com/file/d/14duSeQrW8_kpVmlg9HrJpVi9ol9kDdZu/view?usp=drive_link" target="_blank"
+                 class="mt-3 inline-block bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-md font-semibold text-sm transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Featured Game 3 -->
+          <div class="relative game-card min-w-[300px] rounded-lg overflow-hidden shadow-lg cursor-pointer">
+            <img src="img/homeworld 3.jpg" alt="Featured Game 3" class="w-full h-44 object-cover">
+            <div class="overlay absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-end p-4 text-white">
+              <h3 class="text-lg font-semibold">HomeWorld 3</h3>
+              <p class="text-sm mt-1">Strategy battles in space</p>
+              <a href="https://example.com/download3" target="_blank"
+                 class="mt-3 inline-block bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-md font-semibold text-sm transition">
+                Download
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- All Games Grid -->
+      <section class="mt-12">
+        <h2 class="text-2xl font-bold mb-6">All Games</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/33.jpg" alt="Game 1" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Clair Obscur Expedition 33</h3>
+              <p class="text-gray-400 text-sm mb-3">Adventure Game</p>
+              <a href="https://example.com/download1" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/resevil 6.jpg" alt="Game 2" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Resident Evil 6</h3>
+              <p class="text-gray-400 text-sm mb-3">Action Horror</p>
+              <a href="https://example.com/download2" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/gtav enhanced.jpg" alt="Game 3" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Grand Theft Auto V Enhanced</h3>
+              <p class="text-gray-400 text-sm mb-3">Ultimate Open-World Action</p>
+              <a href="https://example.com/download3" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/nba2k25.jpg" alt="Game 4" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">NBA 2K25</h3>
+              <p class="text-gray-400 text-sm mb-3">Sports Video Game</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/pokemon ultra moon.jpg" alt="Game 5" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Pokemon Ultra Moon</h3>
+              <p class="text-gray-400 text-sm mb-3">Explore the Alola Region</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/cod black ops.jpg" alt="Game 6" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">COD Black Ops</h3>
+              <p class="text-gray-400 text-sm mb-3">Intense Multiplayer Action</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+            <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/watchdogs 2.jpg" alt="Game 7" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Wild Dogs 2</h3>
+              <p class="text-gray-400 text-sm mb-3">Action Adventure</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/tekken 7.jpg" alt="Game 8" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Tekken 7</h3>
+              <p class="text-gray-400 text-sm mb-3">Epic Fighting Game</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/mario kart 8 deluxe.jpg" alt="Game 9" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Mario Kart 8 Deluxe</h3>
+              <p class="text-gray-400 text-sm mb-3">Kart Racing</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/red dead redemption 2.jpg" alt="Game 8" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Red Dead Redemption 2</h3>
+              <p class="text-gray-400 text-sm mb-3">Epic Open-World Action</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/the last of us 2 rem.jpg" alt="Game 8" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">The Last of Us Part II</h3>
+              <p class="text-gray-400 text-sm mb-3">Epic Action-Adventure</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Game Card -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-blue-600 transition cursor-pointer">
+            <img src="img/nfs heat deluxe.jpg" alt="Game 8" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-1">Need for Speed Heat Deluxe</h3>
+              <p class="text-gray-400 text-sm mb-3">High-Octane Racing</p>
+              <a href="https://example.com/download4" target="_blank"
+                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                Download
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="text-center text-gray-500 py-6 text-sm">
+      © 2025 GameVault. All rights reserved.
+    </footer>
+
+  </div>
+
+</body>
+</html>
